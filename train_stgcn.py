@@ -47,6 +47,7 @@ def train_model(batch_size=16, epochs=50, lr=0.001, patience=10):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f" Training on {device}")
 
+    print("1. Đang load dữ liệu từ ổ cứng (Có thể lâu)...")
     # Load data
     data_path = os.path.join(OUTPUT_DIR, 'stgcn_data_aug.npy')
     labels_path = os.path.join(OUTPUT_DIR, 'stgcn_labels_aug.npy')
