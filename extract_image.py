@@ -1,3 +1,4 @@
+# extract_image.py
 import os
 import subprocess
 import unicodedata
