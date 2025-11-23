@@ -2,7 +2,12 @@
 import os
 
 # Thư mục lưu dataset và graph
-OUTPUT_DIR = r"D:\MultiVSL\MultiVSL\dataset\stgcn_dataset"
+# Cho phép ghi đè bằng biến môi trường OUTPUT_DIR để dùng trong Docker
+OUTPUT_DIR = os.environ.get(
+	"OUTPUT_DIR",
+	r"D:\\MultiVSL\\MultiVSL\\dataset\\stgcn_dataset"
+)
 
-# Tạo thư mục nếu chưa có
+# Chuẩn hóa đường dẫn (nếu cần) và tạo thư mục
+OUTPUT_DIR = os.path.normpath(OUTPUT_DIR)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
